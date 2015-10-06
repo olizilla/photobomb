@@ -1,0 +1,18 @@
+<template name="camera">
+  <video autoplay></video>
+  <canvas></canvas>
+  <div class="controls">
+    <button type="button" value="Snap">
+      {{> cameraRec}}
+    </button>
+  </div>
+</template>
+
+<template name="cameraRec">
+  <svg width="100px" height="100px" viewBox="0 0 280 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g class="rec" stroke="none" stroke-width="1" fill-rule="evenodd">
+      <path id="rec-outer" d="M140,280 C217.319865,280 280,217.319865 280,140 C280,62.680135 217.319865,0 140,0 C62.680135,0 0,62.680135 0,140 C0,217.319865 62.680135,280 140,280 Z M140.5,253 C202.632034,253 253,202.632034 253,140.5 C253,78.3679656 202.632034,28 140.5,28 C78.3679656,28 28,78.3679656 28,140.5 C28,202.632034 78.3679656,253 140.5,253 Z"></path>
+      <circle id="rec-inner" cx="140" cy="140" r="97"></circle>
+    </g>
+  </svg>
+</template>
