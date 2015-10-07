@@ -5,25 +5,36 @@ var canvas
 var w
 var h
 
+Template.camera.onCreated(function () {
+  var tpl = this
+  tpl.autorun(function () {
+    var tag = Session.get('tag')
+    console.log('camera.onCreated', tag)
+    if (!tag) return
+    tpl.subscribe('photosByTag', tag._id)
+    console.log('camera.onCreated done', tag)
+  })
+})
+
 Template.camera.onRendered(function () {
   initCamera()
 })
 
 Template.camera.helpers({
   photos: function () {
-    Photos.find({createdBy: 'userId'})
+    return Photos.find({})
   }
 })
 
 Template.camera.events({
   'click button': function (evt) {
     var data = {
-      tag: Session.get(tag),
+      tag: Session.get('tag'),
       image: takePhoto()
     }
     Meteor.call('photos/add', data)
   }
-});
+})
 
 // Pop.find({}).observeChanges({
 //   added: function () {

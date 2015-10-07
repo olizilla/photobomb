@@ -6,6 +6,10 @@
       {{> cameraRec}}
     </button>
   </div>
+  <h1 class="hashtag">#{{tag.name}}</h1>
+  {{#each photos}}
+  <img width=200 src="{{image}}" />
+  {{/each}}
 </template>
 
 <template name="cameraRec">

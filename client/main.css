@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background: #222;
-  color: #efefef;
+  color: #ccc;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 }
@@ -57,4 +57,10 @@ button:focus {
 .vert-center > * {
   display:inline-block;
   vertical-align: middle;
+}
+.hashtag {
+  position:absolute;
+  top: 20px;
+  width:100%;
+  text-align:center;
 }
