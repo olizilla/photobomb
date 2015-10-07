@@ -70,7 +70,11 @@ function uploadPhoto (cb) {
 
 function takePhoto () {
   var context = canvas.getContext('2d')
-  context.drawImage(video, 0, 0, w, h)
+  context.drawImage(
+    video,
+    canvas.width / 2 - video.videoWidth / 2,
+    canvas.height / 2 - video.videoHeight / 2
+  )
   return canvas.toDataURL("image/jpeg", 0.5)
 }
 
@@ -86,8 +90,8 @@ function initCamera () {
     setTimeout(function () {
       w = video.videoWidth
       h = video.videoHeight
-      canvas.setAttribute('width', w)
-      canvas.setAttribute('height', h)
+      canvas.setAttribute('width', 480)
+      canvas.setAttribute('height', 480)
     }, 1000)
   }, function(er) {
     console.error('Video capture error', er)

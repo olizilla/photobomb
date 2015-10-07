@@ -57,10 +57,12 @@ Take a photo from many cameras at once.
 - Tag is marked as done when all photos are up, or timeout.
 - Each user can see the photos as a slideshow.
 - when a tag is marked as done, find all photos for tag, and gif them.
-
+- https://github.com/sole/Animated_GIF
 
 TODO:
 
-- Replace all that feature detection with https://github.com/sole/gumhelper
-- DO the gif https://github.com/jnordberg/gif.js or https://yahoo.github.io/gifshot/ or https://github.com/pkrumins/node-gif
+- Replace all that feature detection with https://github.com/sole/gumhelper (2x thanks @sole!)
 
+## How it works
+
+Dynamic template selection

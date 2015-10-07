@@ -12,7 +12,7 @@ Template.review.onRendered(function () {
       var imgs = document.querySelectorAll('img');
       // change workerPath to point to where Animated_GIF.worker.js is
       var ag = new Animated_GIF({ workerPath: '/Animated_GIF.worker.js' })
-      ag.setSize(320, 240)
+      ag.setSize(480, 480)
       for(var i = 0; i < imgs.length; i++) {
         ag.addFrame(imgs[i])
       }
