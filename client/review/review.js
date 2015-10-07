@@ -5,16 +5,17 @@ Template.review.onCreated(function () {
 Template.review.onRendered(function () {
   var tpl = this
   tpl.autorun(function () {
-    var tag = Session.get('tag')
-    if (!tag) return
-    tpl.subscribe('photosByTag', tag._id, function () {
+    if (!Session.get('tag')) return
+    var tagId = Session.get('tag')._id
+    tpl.subscribe('photosByTag', tagId, function () {
       // wait for images
     })
-    tpl.photoObserver = Photos.find({}).observe({
+    tpl.photoObserver = Photos.find({'tag._id': tagId}).observe({
       added: function (doc) {
         if (Tracker.Computation.firstRun) return
-        var count = Photos.find({}).count()
-        var tag = Tags.findOne()
+        var count = Photos.find({'tag._id': tagId}).count()
+        //FIX ME
+        var tag = Tags.findOne(tagId)
         console.log('photos recieved', count)
         if (!tag || count === 0) return
         if (count === tag.users.length) {
