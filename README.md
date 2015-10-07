@@ -61,5 +61,6 @@ Take a photo from many cameras at once.
 
 TODO:
 
-- https://github.com/sole/gumhelper
-- https://github.com/jnordberg/gif.js or https://yahoo.github.io/gifshot/ or https://github.com/pkrumins/node-gif
+- Replace all that feature detection with https://github.com/sole/gumhelper
+- DO the gif https://github.com/jnordberg/gif.js or https://yahoo.github.io/gifshot/ or https://github.com/pkrumins/node-gif
+
