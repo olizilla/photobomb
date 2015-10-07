@@ -1,0 +1,15 @@
+<template name="review">
+  <div class="vert-center">
+    <div class="">
+      <h1>Photobomb! #{{tag.name}} </h1>
+      <hr>
+      <div class="items-{{photoCount}}">
+        {{#each photos}}
+        <img width=200 src="{{image}}" />
+        {{/each}}
+      </div>
+      <hr>
+      <h2><button class="button-primary button-again">Again ?</button></h2>
+    </div>
+  </div>
+</template>

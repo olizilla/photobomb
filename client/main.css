@@ -17,7 +17,7 @@ canvas{
 .controls {
   display:block;
   position:fixed;
-  bottom: 30px;
+  bottom: 50px;
   margin:0 auto;
   width:100%;
   text-align:center;
@@ -63,4 +63,20 @@ button:focus {
   top: 20px;
   width:100%;
   text-align:center;
+  color:#fff;
+}
+.countdown {
+  position:absolute;
+  top: 120px;
+  width:100%;
+  font-size:200px;
+  text-shadow: 2px 2px 2px rgab(0,0,0,0.8);
+  color:#fff;
+}
+.info {
+  text-align:left;
+  max-width:480px;
+}
+.video-box {
+  display:inline-block;
 }

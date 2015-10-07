@@ -20,3 +20,5 @@ spacebars
 check
 accounts-twitter
 accounts-ui
+service-configuration
+reactive-var

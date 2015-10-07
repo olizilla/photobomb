@@ -2,7 +2,6 @@
 
 Take a photo from many cameras at once.
 
-
 ## Milestones
 
 7pm - **v0.1** - minimum viable whizzbang
@@ -57,4 +56,10 @@ Take a photo from many cameras at once.
 - Each player adds their photos
 - Tag is marked as done when all photos are up, or timeout.
 - Each user can see the photos as a slideshow.
-- server gifs them!
+- when a tag is marked as done, find all photos for tag, and gif them.
+
+
+TODO:
+
+- https://github.com/sole/gumhelper
+- https://github.com/jnordberg/gif.js or https://yahoo.github.io/gifshot/ or https://github.com/pkrumins/node-gif

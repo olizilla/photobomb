@@ -2,9 +2,9 @@
 //   { service: "twitter" },
 //   {
 //     $set: {
-//       clientId: "1292962797",
-//       loginStyle: "popup",
-//       secret: "75a730b58f5691de5522789070c319bc"
+//       consumerKey: "5HKXO5g3qjy2BMY6Is7SZHmOm",
+//       secret: "Tn56yA8CGrHIQn0GfW0xZJZHf1Y52HXDd8MBNwBLg3HUpSqmCo",
+//       loginStyle: "popup"
 //     }
 //   }
 // )

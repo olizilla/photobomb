@@ -1,15 +1,16 @@
 <template name="camera">
-  <video autoplay></video>
   <canvas></canvas>
+  <div class="video-box" width="640" height="480">
+    <video width="640" height="480" autoplay></video>
+    <h4 class="info">Cameras: {{tag.users.length}}</h4>
+  </div>
   <div class="controls">
-    <button type="button" value="Snap">
-      {{> cameraRec}}
-    </button>
+    <span class="rec-button">
+    {{> cameraRec}}
+    </span>
   </div>
   <h1 class="hashtag">#{{tag.name}}</h1>
-  {{#each photos}}
-  <img width=200 src="{{image}}" />
-  {{/each}}
+  <h2 class="countdown">{{timer}}</h2>
 </template>
 
 <template name="cameraRec">

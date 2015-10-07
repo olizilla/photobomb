@@ -5,7 +5,7 @@ Template.tag.events({
     Meteor.call('tags/findOrCreate', name, function (err, tagId) {
       console.log('tags/findOrCreate')
       Session.set('tag', { _id: tagId, name: name})
-      Meteor.subscribe('tagsByName', name, function () {
+      Meteor.subscribe('tagsById', tagId, function () {
         Session.set('page', 'camera')
       })
     })
