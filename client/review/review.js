@@ -8,22 +8,25 @@ Template.review.onRendered(function () {
     var tag = Session.get('tag')
     if (!tag) return
     tpl.subscribe('photosByTag', tag._id, function () {
-      console.log('GIFs start', Animated_GIF)
-      var imgs = document.querySelectorAll('img');
-      // change workerPath to point to where Animated_GIF.worker.js is
-      var ag = new Animated_GIF({ workerPath: '/Animated_GIF.worker.js' })
-      ag.setSize(480, 480)
-      for(var i = 0; i < imgs.length; i++) {
-        ag.addFrame(imgs[i])
+      // wait for images
+    })
+    tpl.photoObserver = Photos.find({}).observe({
+      added: function (doc) {
+        if (Tracker.Computation.firstRun) return
+        var count = Photos.find({}).count()
+        var tag = Tags.findOne()
+        console.log('photos recieved', count)
+        if (!tag || count === 0) return
+        if (count === tag.users.length) {
+          makeGif()
+        }
       }
-      var animatedImage = document.createElement('img')
-      // This is asynchronous, rendered with WebWorkers
-      ag.getBase64GIF(function(image) {
-        animatedImage.src = image
-        document.getElementById('gif').appendChild(animatedImage)
-      })
     })
   })
+})
+
+Template.review.onDestroyed(function () {
+  tpl.photoObserver.stop()
 })
 
 Template.review.helpers({
@@ -45,3 +48,19 @@ Template.review.events({
   }
 })
 
+function makeGif () {
+  console.log('GIFs start')
+  var imgs = document.querySelectorAll('img');
+  // change workerPath to point to where Animated_GIF.worker.js is
+  var ag = new Animated_GIF({ workerPath: '/Animated_GIF.worker.js' })
+  ag.setSize(480, 480)
+  for(var i = 0; i < imgs.length; i++) {
+    ag.addFrame(imgs[i])
+  }
+  var animatedImage = document.createElement('img')
+  // This is asynchronous, rendered with WebWorkers
+  ag.getBase64GIF(function(image) {
+    animatedImage.src = image
+    document.getElementById('gif').appendChild(animatedImage)
+  })
+}
